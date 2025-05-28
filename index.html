@@ -3,39 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loco Pilot Lobby - Utility App</title>
+  <title>Combined Crew Lobby Madgaon</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>Loco Pilot Lobby</h1>
-    <p>Utility Portal for Running Staff</p>
+    <div class="container">
+      <div class="branding">
+  <div class="logo-bg">
+    <img src="logo.png" alt="Lobby Logo" />
+  </div>
+  <div class="title">
+    <h1>Combined Crew Lobby</h1>
+    <h2>Madgaon</h2>
+  </div>
+</div>
+
+
+      <nav>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Documents</a></li>
+          <li><a href="#">Acknowledgment</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="documents">
-      <h2>📁 Available Documents</h2>
-      <ul>
-        <li>
-          <a href="https://drive.google.com/file/d/FILE_ID/view?usp=sharing" target="_blank">
-            Rule Book - Part A
-          </a>
-        </li>
-        <li>
-          <a href="https://drive.google.com/file/d/FILE_ID/view?usp=sharing" target="_blank">
-            Technical Circular - March
-          </a>
-          <button onclick="acknowledge('Technical Circular - March')">Acknowledge</button>
-        </li>
-      </ul>
-    </section>
-  </main>
-
   <footer>
-    <p>&copy; 2025 Loco Pilot Lobby. All rights reserved.</p>
+    <p>&copy; 2025 Combined Crew Lobby Madgaon. All rights reserved.</p>
   </footer>
 
-  <script src="scripts.js"></script>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const links = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
-
