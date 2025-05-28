@@ -12,7 +12,7 @@ body {
 
 header {
   background: linear-gradient(to right, #ffffff, #e6f0ff); /* white to light blue */
-  padding: 2.5rem 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
   border-bottom: 4px solid #ffcc00;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
