@@ -39,12 +39,16 @@ header {
 }
 
 .title h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-family: 'Segoe UI', sans-serif;
   letter-spacing: 1px;
   font-weight: bold;
   color: white;
+  white-space: nowrap;         /* Keep in one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .title h2 {
   font-size: 1.2rem;
@@ -147,5 +151,14 @@ footer {
 }
 .logo-bg:hover {
   transform: scale(1.05);
+}
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 1.6rem;         /* Smaller size on small screens */
+  }
+
+  .title h2 {
+    font-size: 1rem;
+  }
 }
 
