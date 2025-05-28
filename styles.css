@@ -75,17 +75,6 @@ nav {
   right: 1rem;
   z-index: 1100; /* On top of everything */
 }
-
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -101,26 +90,35 @@ nav {
 
 /* Responsive hamburger menu */
 @media (max-width: 768px) {
-  .nav-links {
+  .menu {
     display: none;
     flex-direction: column;
-    background-color: #003366;
-    border-radius: 8px;
-    padding: 1rem;
+    align-items: flex-start;
+    background: #ffffff;
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    text-align: center;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 
-  .nav-links.active {
+  .menu.active {
     display: flex;
+  }
+
+  /* Hides desktop nav links if you are using both .menu and .nav-links */
+  .nav-links {
+    display: none !important;
   }
 
   .menu-toggle {
     display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
   }
 }
 
