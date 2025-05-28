@@ -12,14 +12,13 @@ body {
 }
 
 header {
-  background-color: #002d72; /* Deep Royal KR Blue */
+  background: linear-gradient(to right, #ffffff, #e6f0ff); /* white to light blue */
   padding: 2.5rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
- 
-  border-bottom: 4px solid #ffcc00; /* Railway yellow underline */
-
+  border-bottom: 4px solid #ffcc00; /* Yellow underline */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .container {
   max-width: 960px;
@@ -43,19 +42,17 @@ header {
   font-family: 'Segoe UI', sans-serif;
   letter-spacing: 1px;
   font-weight: bold;
-  color: white;
-  white-space: nowrap;         /* Keep in one line */
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #002b5c; /* Deep Blue matching KR logo */
+  white-space: nowrap;
 }
-
 
 .title h2 {
   font-size: 1.2rem;
-  color: #cce0ff;
+  color: #004080; /* Softer blue */
   font-weight: 500;
   margin-top: 0.3rem;
 }
+
 
 
 /* Navbar styles */
@@ -151,14 +148,5 @@ footer {
 }
 .logo-bg:hover {
   transform: scale(1.05);
-}
-@media (max-width: 480px) {
-  .title h1 {
-    font-size: 1.6rem;         /* Smaller size on small screens */
-  }
-
-  .title h2 {
-    font-size: 1rem;
-  }
 }
 
