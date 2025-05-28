@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f4f8;
@@ -56,16 +55,27 @@ header {
 
 
 /* Navbar styles */
+.navbar {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1000;
+}
+
 nav {
   margin-top: 1.5rem;
 }
 
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  color: white;
+  color: #002b5c;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100; /* On top of everything */
 }
+
 
 .nav-links {
   list-style: none;
