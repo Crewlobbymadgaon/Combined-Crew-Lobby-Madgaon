@@ -204,4 +204,71 @@ footer {
 body {
   padding-top: 40px; /* Adjust this to match banner height */
 }
+/* Navbar base */
+.navbar {
+  background-color: #002244;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 50px; /* below the scrolling banner */
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+
+/* Flex container */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Menu items */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #ffd700; /* yellow on hover */
+}
+
+/* Hamburger menu for mobile */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #002244;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
