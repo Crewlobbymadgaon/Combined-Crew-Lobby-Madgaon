@@ -199,4 +199,47 @@ footer {
   100% {
     transform: translateX(-100%);
   }
+  .train-container {
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-top: 2px solid #555;
+  border-bottom: 2px solid #555;
+  padding: 10px 0;
+  position: relative;
+}
+
+.train-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: move-train 25s linear infinite;
+}
+
+.engine {
+  font-size: 2rem;
+  padding: 0 10px;
+}
+
+.bogie {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+@keyframes move-train {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-110%);
+  }
+}
 }
