@@ -42,63 +42,65 @@ header {
 }
 
 /* Navbar */
+/* Navbar base */
 .navbar {
-  background-color: #003366;
-  padding: 0.8rem 2rem;
-  position: relative;
+  background-color: #002244;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 50px; /* space below scrolling banner */
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Flex container to align menu and toggle icon */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allows content to stack on smaller screens */
+}
+
+/* Hamburger icon */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 24px;
   color: white;
-  position: absolute;
-  right: 1rem;
-  top: 0.6rem;
   cursor: pointer;
-  z-index: 1100;
+  user-select: none;
+  padding: 5px 10px;
+  background-color: #002244; /* Match navbar background */
+  border-radius: 4px;
 }
 
+/* Menu list */
 .menu {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
   list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li a {
-  color: white;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  position: relative;
-}
-.menu li a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background: white;
-  width: 0%;
-  transition: 0.3s;
-  margin: auto;
-}
-.menu li a:hover::after {
-  width: 100%;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Responsive */
+.menu li a:hover {
+  color: #ffd700;
+}
+
+/* Responsive menu */
 @media (max-width: 768px) {
   .menu {
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #003366;
-    padding: 1rem;
     display: none;
-    animation: fadeIn 0.3s ease;
+    flex-direction: column;
+    background-color: #002244;
+    width: 100%;
+    padding: 10px 0;
   }
 
   .menu.active {
@@ -108,10 +110,7 @@ header {
   .menu-toggle {
     display: block;
   }
-
-  .menu li {
-    margin-bottom: 0.8rem;
-  }
+}
   
 
   .title h1 {
