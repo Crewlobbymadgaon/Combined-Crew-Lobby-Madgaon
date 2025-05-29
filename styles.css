@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Body */
+/* Base */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -13,10 +13,10 @@ body {
 }
 
 /* Header branding */
-header {
+.header {
   background-color: #004080;
-  color: white;
   padding: 10px 20px;
+  color: white;
 }
 
 .branding {
@@ -47,11 +47,11 @@ header {
   padding: 0 20px;
 }
 
-/* Slogan scrolling */
+/* Scrolling slogan */
 .scroll-text-wrapper {
   overflow: hidden;
-  background-color: transparent;
   padding: 5px 0;
+  background-color: transparent;
 }
 
 .scroll-text {
@@ -60,35 +60,41 @@ header {
   gap: 10px;
   white-space: nowrap;
   animation: scroll-left 15s linear infinite;
-  color: white;
   font-weight: bold;
+  color: white;
 }
 
 .scroll-text .icon {
   height: 28px;
 }
 
-/* Scroll animation */
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 
-/* Menu bar */
+/* Menu */
 .menu-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
   flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
 }
 
 .menu {
   display: flex;
-  list-style: none;
   gap: 20px;
-  padding: 0;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .menu li a {
@@ -101,15 +107,7 @@ header {
   color: #ffd700;
 }
 
-/* Hamburger toggle */
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
