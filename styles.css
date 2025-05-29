@@ -112,6 +112,42 @@ header {
   .menu li {
     margin-bottom: 0.8rem;
   }
+  .train-track {
+  width: 100%;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.train {
+  display: inline-block;
+  white-space: nowrap;
+  animation: train-move 20s linear infinite;
+}
+
+.train-body {
+  display: inline-block;
+  background-color: #003366;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+  border: 2px solid #fff;
+}
+
+@keyframes train-move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
   .title h1 {
     font-size: 1.3rem;
