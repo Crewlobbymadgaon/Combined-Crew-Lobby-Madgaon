@@ -44,7 +44,7 @@ header {
 /* Navbar */
 .navbar {
   background-color: #003366;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 2rem;
   position: relative;
 }
 
@@ -165,93 +165,43 @@ footer {
     transform: translateX(-100%);
   }
 
-/* Main train container */
-.train-container {
-  width: 100%;
-  overflow: hidden;
-  background: #f0f0f0;
-  border-top: 2px solid #555;
-  border-bottom: 2px solid #555;
-  padding: 10px 0 20px 0;
-  position: relative;
 }
-
-/* Train and movement */
-.train-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  animation: move-train 25s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes move-train {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-110%);
-  }
-}
-
-/* Engine */
-.engine {
-  font-size: 2rem;
-  position: relative;
-  padding: 0 10px;
-}
-
-/* Smoke */
-.smoke {
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: gray;
-  opacity: 0.5;
-  animation: smoke-puff 1.5s ease-out infinite;
-}
-
-@keyframes smoke-puff {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(-20px) scale(2);
-    opacity: 0;
-  }
-}
-
-/* Bogies */
-.bogie {
-  background-color: #003366;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 6px;
-  border: 2px solid #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  min-width: 100px;
-  text-align: center;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-
-/* Railway track */
-.track {
-  height: 5px;
-  background-image: repeating-linear-gradient(
-    to right,
-    #333,
-    #333 20px,
-    #999 20px,
-    #999 40px
-  );
-  position: absolute;
-  bottom: 5px;
+/* Scrolling banner fixed at the top */
+.scroll-banner.fixed-top {
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
+  background-color: #003366;
+  color: white;
+  padding: 8px 0;
+  z-index: 1000;
+  overflow: hidden;
+  border-bottom: 2px solid #fff;
+}
+
+/* Scrolling text */
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 20s linear infinite;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Keyframes for scrolling effect */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Push down the rest of the page to avoid overlap */
+body {
+  padding-top: 40px; /* Adjust this to match banner height */
 }
 }
