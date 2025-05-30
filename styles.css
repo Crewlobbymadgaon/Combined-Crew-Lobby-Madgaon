@@ -44,19 +44,27 @@ header {
 /* Navbar */
 .navbar {
   background-color: #003366;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 0;
   position: relative;
+}
+
+.nav-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: flex;
-  justify-content: space-between; /* important */
-  align-items: center;            /* vertically center items */
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 .menu-toggle {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
+  color: white;
   cursor: pointer;
-  color: #fff;
+  z-index: 1001; /* stay on top */
+  position: relative;
 }
-
 .menu {
   list-style: none;
   display: flex;
@@ -92,12 +100,14 @@ header {
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     background-color: #003366;
+    position: absolute;
+    top: 100%; /* appear just below the navbar */
+    right: 0;
+    width: 100%;
     padding: 1rem;
-    margin-top: 10px;
+    z-index: 1000;
   }
-
   .menu.active {
     display: flex;
   }
@@ -109,7 +119,9 @@ header {
    .menu li {
     margin: 10px 0;
   }
-
+.nav-container {
+    align-items: flex-start;
+  }
   .title h1 {
     font-size: 1.3rem;
     text-align: center;
