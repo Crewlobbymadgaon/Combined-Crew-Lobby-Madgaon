@@ -45,34 +45,36 @@ header {
 .navbar {
   background-color: #003366;
   padding: 0.8rem 0;
-  position: relative;
 }
 
 .nav-container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
 }
+/* Menu Toggle Button (☰) */
 .menu-toggle {
   display: none;
   font-size: 28px;
   color: white;
   cursor: pointer;
-  z-index: 1001; /* stay on top */
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  z-index: 1001;
 }
+
+/* Menu Styles */
 .menu {
   list-style: none;
   display: flex;
+  justify-content: center; /* center items */
   gap: 20px;
   margin: 0;
   padding: 0;
 }
-
 .menu li a {
   color: white;
   text-decoration: none;
@@ -96,17 +98,16 @@ header {
   .menu-toggle {
     display: block;
   }
- .menu {
+.menu {
     display: none;
     flex-direction: column;
     align-items: flex-start;
     background-color: #003366;
     position: absolute;
-    top: 100%; /* appear just below the navbar */
+    top: 100%; /* appear below navbar */
     right: 0;
     width: 100%;
     padding: 1rem;
-    z-index: 1000;
   }
   .menu.active {
     display: flex;
@@ -118,6 +119,10 @@ header {
 
    .menu li {
     margin: 10px 0;
+  }
+  /* Prevent layout break */
+  .menu {
+    justify-content: flex-start;
   }
 .nav-container {
     align-items: flex-start;
