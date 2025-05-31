@@ -157,22 +157,21 @@ footer {
 
 /* Scrolling Slogan Styles */
 .scroll-banner {
-  background: transparent;
+  width: 100%;
   overflow: hidden;
-  white-space: nowrap;
+  background: #e6f2ff;
   padding: 5px 0;
   position: relative;
 }
 
 .scroll-text {
-  display: inline-flex;
-  padding-left: 100%;
-  animation: scroll-left 20s linear infinite;
-  color: #004080;
-  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 15s linear infinite;
   font-size: 16px;
+  font-weight: bold;
+  color: #003366;
 }
-
 .scroll-text .icon {
   height: 24px;
   margin-right: 10px;
@@ -180,6 +179,10 @@ footer {
 
 /* Scroll Animation */
 @keyframes scroll-left {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
