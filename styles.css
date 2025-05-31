@@ -132,31 +132,34 @@ header {
 }
 
 @media (max-width: 768px) {
+  /* Toggle Button at Top Right */
   .menu-toggle {
     display: block;
-    position: absolute;
-    top: 10px;
+    position: fixed;
+    top: 70px; /* just below scroll text box */
     right: 10px;
-    background: transparent;
-    border: none;
+    background-color: transparent;
+    border: 2px solid #003366;
+    border-radius: 50%;
+    padding: 8px 12px;
+    color: #003366;
+    font-size: 24px;
     z-index: 1001;
   }
  .menu {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 60px; /* ⬅️ Adjusted to appear below the toggle bar */
-    right: 0;
-    width: 100%;
+    align-items: flex-end;
+    position: fixed;
+    top: 110px; /* just below toggle */
+    right: 10px;
+    width: auto;
     padding: 1rem;
-
-    background-color: transparent; /* Fully transparent */
+    background-color: transparent;
     backdrop-filter: none;
-    box-shadow: none;
-    border: none;
     z-index: 1000;
   }
+
   .menu.active {
     display: flex;
   }
@@ -166,17 +169,15 @@ header {
   }
 
 .menu li a {
-    color: #222; /* ⬅️ Dark color for readability */
+    color: #222;
     font-weight: bold;
-    text-decoration: none;
     font-size: 16px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.6); /* Optional for readability */
+    padding: 5px 10px;
+    border-radius: 6px;
   }
-
   
-  html, body {
-  height: 100%;
-  margin: 0;
-}
 
 .page-wrapper {
   display: flex;
@@ -188,11 +189,16 @@ main {
   flex: 1;
 }
 
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
+  /* Make footer stick to bottom */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  footer {
+    margin-top: auto;
+  }
+
 
 }
