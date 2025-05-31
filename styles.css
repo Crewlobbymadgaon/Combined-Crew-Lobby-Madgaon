@@ -17,64 +17,86 @@ body {
 /* Header */
 header {
   background: linear-gradient(to right, #ffffff, #d6eaff);
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem;
   text-align: center;
   border-bottom: 3px solid #0066cc;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
+
 .branding {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .logo-bg {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   border-radius: 50%;
   padding: 1rem;
-  display: inline-block;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
+
 .logo-bg img {
   height: 80px;
+  max-width: 100%;
 }
+
 .title h1 {
+  margin: 0;
   font-size: 1.8rem;
   font-weight: bold;
   color: #003366;
-  margin-top: 0.5rem;
 }
 
 /* Scroll Banner */
 .scroll-banner {
-  width: 100%;
-  overflow: hidden;
-  background: #e6f2ff;
-  padding: 5px 10px;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #e6f2ff;
+  padding: 5px 10px;
+  overflow: hidden;
+  position: relative;
 }
+
 .scroll-track {
+  flex: 1;
+  overflow: hidden;
   white-space: nowrap;
+}
+
+.scroll-text {
+  display: inline-block;
   animation: scroll-left 15s linear infinite;
   font-size: 16px;
   font-weight: bold;
   color: #003366;
-  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.icon {
+  height: 24px;
+}
+
 @keyframes scroll-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-/* Toggle Menu Button (mobile) */
-.menu-toggle {
-  display: none;
+/* Nav container */
+.nav-container {
+  position: relative;
 }
 
-/* Navbar menu */
+/* Menu */
 .menu {
   list-style: none;
   display: flex;
@@ -95,33 +117,27 @@ header {
   background: #d6eaff;
 }
 
-/* Footer */
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
+/* Toggle Menu Button */
+.menu-toggle {
+  display: none;
 }
 
-/* Responsive Mobile Styles */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    z-index: 1001;
-    width: 40px;
-    height: 40px;
     background: white;
     border: 2px solid #003366;
     border-radius: 50%;
-    font-size: 24px;
-    line-height: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 32px;
     text-align: center;
     color: #003366;
     cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 10px;
   }
 
   .menu {
@@ -129,10 +145,12 @@ footer {
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    top: 50px;
+    top: 100%;
     right: 10px;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 1000;
+    border: 1px solid #ccc;
+    padding: 10px;
   }
 
   .menu.active {
@@ -140,21 +158,21 @@ footer {
   }
 
   .menu li a {
+    background: none;
     color: #222;
-    background: rgba(255, 255, 255, 0.85);
-    margin-bottom: 6px;
-    font-weight: bold;
-  }
-
-  .menu li {
-    margin: 0;
+    padding: 8px 12px;
   }
 
   .menu li a:hover {
     background: #d0eaff;
   }
+}
 
-  .menu li a::after {
-    display: none;
-  }
+/* Footer */
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
 }
