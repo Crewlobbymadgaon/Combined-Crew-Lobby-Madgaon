@@ -44,25 +44,28 @@ header {
 /* Navbar */
 .navbar {
   background-color: #003366;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
 }
-
 .nav-container {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
-  justify-content: center; /* center the menu by default */
+  justify-content: center;
   align-items: center;
   position: relative;
 }
+
 /* Menu Toggle Button */
 .menu-toggle {
   display: none;
   font-size: 28px;
   color: white;
   cursor: pointer;
-  margin-left: auto; /* push it to the right */
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
 }
 
 /* Menu */
@@ -90,17 +93,14 @@ header {
 .menu li a:hover::after {
   width: 100%;
 }
+
 /* Mobile Styles */
-@media (max-width: 768px) {
-  .nav-container {
-    justify-content: space-between;
-  }
-/* Responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
-.menu {
+
+  .menu {
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -110,39 +110,52 @@ header {
     right: 0;
     width: 100%;
     padding: 1rem;
+    z-index: 1000;
   }
+
   .menu.active {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
-   .menu li {
+  .menu li {
     margin: 10px 0;
   }
-  /* Prevent layout break */
-  .menu {
-    justify-content: flex-start;
+
+  .nav-container {
+    justify-content: space-between;
   }
-.nav-container {
-    align-items: flex-start;
-  }
+
   .title h1 {
     font-size: 1.3rem;
     text-align: center;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+/* Scroll Banner */
+.scroll-banner {
+  width: 100%;
+  overflow: hidden;
+  background: #e6f2ff;
+  padding: 5px 0;
+  position: relative;
+}
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 15s linear infinite;
+}
+.scroll-text {
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: bold;
+  color: #003366;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  100% {
+    transform: translateX(-100%);
   }
 }
 
@@ -153,36 +166,4 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
-}
-
-/* Scrolling Slogan Styles */
-.scroll-banner {
-  width: 100%;
-  overflow: hidden;
-  background: #e6f2ff;
-  padding: 5px 0;
-  position: relative;
-}
-
-.scroll-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-left 15s linear infinite;
-}
-
-.scroll-text {
-  white-space: nowrap;
-  font-size: 16px;
-  font-weight: bold;
-  color: #003366;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-
 }
