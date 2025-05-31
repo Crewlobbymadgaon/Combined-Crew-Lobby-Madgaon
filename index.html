@@ -21,7 +21,7 @@
     </div>
   </header>
 
-  <!-- Scrolling Banner -->
+  <!-- Scrolling Banner with Toggle -->
   <div class="scroll-banner">
     <div class="scroll-track">
       <div class="scroll-text">
@@ -30,31 +30,31 @@
         OUR MISSION ZERO SPAD | हमारा लक्ष्य शून्य SPAD |
       </div>
     </div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
   </div>
 
-  <!-- Navigation -->
+  <!-- Navigation Menu -->
   <div class="nav-container">
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-  <ul class="menu" id="menu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Documents</a></li>
-    <li><a href="#">Circulars</a></li>
-    <li><a href="#">Acknowledgment</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</div>
- <!-- Footer -->
+    <ul class="menu" id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Documents</a></li>
+      <li><a href="#">Circulars</a></li>
+      <li><a href="#">Acknowledgment</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Combined Crew Lobby Madgaon. All rights reserved.</p>
   </footer>
 
-
- <script>
-  document.getElementById("menu-toggle").addEventListener("click", function () {
-    document.getElementById("menu").classList.toggle("active");
-  });
-</script>
- 
+  <!-- Script -->
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("menu").classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
