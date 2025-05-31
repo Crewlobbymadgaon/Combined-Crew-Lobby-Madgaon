@@ -21,7 +21,6 @@ header {
   text-align: center;
   border-bottom: 3px solid #0066cc;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
 }
 
 .branding {
@@ -53,12 +52,12 @@ header {
 /* Scroll Banner */
 .scroll-banner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background: #e6f2ff;
   padding: 5px 10px;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  gap: 10px;
 }
 
 .scroll-track {
@@ -91,12 +90,12 @@ header {
   }
 }
 
-/* Nav container */
-.nav-container {
-  position: relative;
+/* Toggle Button */
+.menu-toggle {
+  display: none;
 }
 
-/* Menu */
+/* Navigation Menu */
 .menu {
   list-style: none;
   display: flex;
@@ -105,27 +104,19 @@ header {
   padding: 1rem 0;
 }
 
-.menu li a {
-  color: #003366;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 4px;
+/* Footer */
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
 }
 
-.menu li a:hover {
-  background: #d6eaff;
-}
-
-/* Toggle Menu Button */
-.menu-toggle {
-  display: none;
-}
-
-/* Responsive Styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: inline-block;
     background: white;
     border: 2px solid #003366;
     border-radius: 50%;
@@ -137,18 +128,14 @@ header {
     color: #003366;
     cursor: pointer;
     flex-shrink: 0;
-    margin-left: 10px;
   }
 
   .menu {
     display: none;
     flex-direction: column;
     align-items: flex-end;
-    position: absolute;
-    top: 100%;
-    right: 10px;
     background-color: rgba(255, 255, 255, 0.95);
-    z-index: 1000;
+    margin: 0 10px;
     border: 1px solid #ccc;
     padding: 10px;
   }
@@ -157,22 +144,20 @@ header {
     display: flex;
   }
 
+  .menu li {
+    width: 100%;
+  }
+
   .menu li a {
-    background: none;
-    color: #222;
-    padding: 8px 12px;
+    display: block;
+    padding: 10px;
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
   }
 
   .menu li a:hover {
-    background: #d0eaff;
+    background: #d6eaff;
   }
-}
-
-/* Footer */
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
 }
