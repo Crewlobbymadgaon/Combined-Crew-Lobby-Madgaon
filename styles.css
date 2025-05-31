@@ -75,15 +75,17 @@ header {
 
 /* Navbar */
 .navbar {
-  background-color: #003366;
+  background-color: transparent;
   padding: 0.8rem 1rem;
+  position: relative;
 }
 .nav-container {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* center-align menu in desktop */
   align-items: center;
+  position: relative;
 }
 
 /* Desktop Menu */
@@ -91,9 +93,11 @@ header {
   list-style: none;
   display: flex;
   gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .menu li a {
-  color: white;
+  color: #003366;
   text-decoration: none;
   font-weight: bold;
 }
@@ -101,7 +105,7 @@ header {
   content: "";
   display: block;
   height: 2px;
-  background: white;
+  background: #003366;
   width: 0%;
   transition: 0.3s;
   margin: auto;
@@ -124,7 +128,7 @@ header {
   background-color: #0066cc;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   position: absolute;
-  left: 10px;  /* Moved to LEFT */
+  right: 10px;
   top: 10px;
   z-index: 2000;
 }
@@ -134,6 +138,7 @@ header {
   .nav-container {
     justify-content: center;
   }
+
   .menu {
     display: none;
     flex-direction: column;
@@ -141,7 +146,7 @@ header {
     background-color: rgba(0, 51, 102, 0.95);
     position: absolute;
     top: 60px;
-    left: 10px; /* Align to left */
+    right: 10px;
     width: 80%;
     max-width: 280px;
     border-radius: 8px;
@@ -152,10 +157,16 @@ header {
   .menu.active {
     display: flex;
   }
-  .menu-toggle {
-    display: block;
-  }
+
   .menu li {
     margin: 10px 0;
+  }
+
+  .menu li a {
+    color: white;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
