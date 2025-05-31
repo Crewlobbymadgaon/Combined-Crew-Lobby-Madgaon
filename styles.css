@@ -154,3 +154,32 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
+
+/* Scrolling Slogan Styles */
+.scroll-banner {
+  background: transparent;
+  overflow: hidden;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.scroll-text {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  color: #004080;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.scroll-text .icon {
+  height: 24px;
+  margin-right: 10px;
+}
+
+/* Scroll Animation */
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+  }
