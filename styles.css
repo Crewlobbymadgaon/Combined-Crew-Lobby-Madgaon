@@ -164,28 +164,25 @@ footer {
   position: relative;
 }
 
-.scroll-text {
-  display: inline-block;
-  min-width: 100%; /* ensures long enough to scroll */
-  white-space: nowrap;
+.scroll-track {
+  display: flex;
+  width: max-content;
   animation: scroll-left 15s linear infinite;
+}
+
+.scroll-text {
+  white-space: nowrap;
   font-size: 16px;
   font-weight: bold;
   color: #003366;
-  will-change: transform;
-}
-.scroll-text .icon {
-  height: 24px;
-  margin-right: 10px;
-  vertical-align: middle;
 }
 
-/* Scroll Animation */
 @keyframes scroll-left {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100vw);
   }
   100% {
     transform: translateX(-100%);
   }
+
 }
