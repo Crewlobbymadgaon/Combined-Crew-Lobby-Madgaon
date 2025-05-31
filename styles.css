@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,6 @@ header {
   padding: 2rem 1rem;
   text-align: center;
   border-bottom: 3px solid #0066cc;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 .branding {
   display: flex;
@@ -39,42 +38,59 @@ header {
   font-weight: bold;
   color: #003366;
   margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Scrolling Banner */
+.scroll-banner {
+  width: 100%;
+  overflow: hidden;
+  background: #e6f2ff;
+  padding: 5px 0;
+  position: relative;
+}
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 15s linear infinite;
+}
+.scroll-text {
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: bold;
+  color: #003366;
+}
+.scroll-text .icon {
+  height: 24px;
+  margin-right: 10px;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Navbar */
 .navbar {
   background-color: #003366;
-  padding: 0.5rem 0;
+  padding: 0.8rem 1rem;
 }
 .nav-container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
-/* Menu Toggle Button */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-}
-
-/* Menu */
+/* Desktop Menu */
 .menu {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin: 0;
-  padding: 0;
 }
 .menu li a {
   color: white;
@@ -94,76 +110,39 @@ header {
   width: 100%;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+/* Toggle Icon */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #0066cc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  user-select: none;
+}
 
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
   .menu {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    background-color: #003366;
     position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
+    background-color: #003366;
+    top: 60px;
+    right: 10px;
     padding: 1rem;
+    border-radius: 8px;
     z-index: 1000;
   }
-
   .menu.active {
     display: flex;
   }
-
-  .menu li {
-    margin: 10px 0;
+  .menu-toggle {
+    display: block;
   }
-
-  .nav-container {
-    justify-content: space-between;
-  }
-
-  .title h1 {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-}
-
-/* Scroll Banner */
-.scroll-banner {
-  width: 100%;
-  overflow: hidden;
-  background: #e6f2ff;
-  padding: 5px 0;
-  position: relative;
-}
-.scroll-track {
-  display: flex;
-  width: max-content;
-  animation: scroll-left 15s linear infinite;
-}
-.scroll-text {
-  white-space: nowrap;
-  font-size: 16px;
-  font-weight: bold;
-  color: #003366;
-}
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Footer */
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
 }
