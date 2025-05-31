@@ -51,13 +51,14 @@ header {
 
 /* Scroll Banner */
 .scroll-banner {
+  position: relative;
   display: flex;
   align-items: center;
   background: #e6f2ff;
   padding: 5px 10px;
-  position: relative;
   overflow: hidden;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .scroll-track {
@@ -82,12 +83,8 @@ header {
 }
 
 @keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 /* Toggle Button */
@@ -95,7 +92,7 @@ header {
   display: none;
 }
 
-/* Navigation Menu */
+/* Menu */
 .menu {
   list-style: none;
   display: flex;
@@ -113,7 +110,7 @@ footer {
   margin-top: auto;
 }
 
-/* Mobile Styles */
+/* Responsive Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
     display: inline-block;
@@ -127,15 +124,16 @@ footer {
     text-align: center;
     color: #003366;
     cursor: pointer;
-    flex-shrink: 0;
+    z-index: 1001;
   }
 
   .menu {
     display: none;
     flex-direction: column;
     align-items: flex-end;
-    background-color: rgba(255, 255, 255, 0.95);
-    margin: 0 10px;
+    width: 100%;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid #ccc;
     padding: 10px;
   }
