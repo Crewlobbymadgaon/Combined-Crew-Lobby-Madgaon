@@ -42,7 +42,34 @@
     <li><a href="#">Acknowledgment</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
+<div class="circular-carousel">
+  <div class="circular-box active">
+    <div class="box-header">
+      <span class="latest-badge">Latest</span>
+      <button class="ack-btn">Acknowledge</button>
+    </div>
+    <h3 class="circular-title">Safety Circular: March 2025</h3>
+    <p class="circular-desc">Important SPAD prevention guidelines for all running staff.</p>
+  </div>
 
+  <div class="circular-box">
+    <div class="box-header">
+      <span class="latest-badge">Latest</span>
+      <button class="ack-btn">Acknowledge</button>
+    </div>
+    <h3 class="circular-title">Shed Order No. 04/2025</h3>
+    <p class="circular-desc">New maintenance timings for WAP-7 units starting April 2025.</p>
+  </div>
+
+  <div class="circular-box">
+    <div class="box-header">
+      <span class="latest-badge">Latest</span>
+      <button class="ack-btn">Acknowledge</button>
+    </div>
+    <h3 class="circular-title">Counseling Subject: Signal Sighting</h3>
+    <p class="circular-desc">All crew must attend the session on signal sighting techniques.</p>
+  </div>
+</div>
 
 
 
@@ -62,7 +89,18 @@
     toggle.textContent = toggle.classList.contains("active") ? "✕" : "☰";
   });
 </script>
-  
+  <script>
+  const circulars = document.querySelectorAll(".circular-box");
+  let currentIndex = 0;
+
+  function rotateCirculars() {
+    circulars[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % circulars.length;
+    circulars[currentIndex].classList.add("active");
+  }
+
+  setInterval(rotateCirculars, 5000); // Rotate every 5 seconds
+  </script>
 
 
 </body>
