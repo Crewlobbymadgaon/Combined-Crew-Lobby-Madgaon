@@ -219,13 +219,12 @@ footer {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  animation: blink-animation 1s steps(2, start) infinite;
+  animation: blink-animation 1.2s linear infinite;
 }
 
 @keyframes blink-animation {
-  0% { opacity: 1; }
+  0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-  100% { opacity: 1; }
 }
 
 /* Circular Box */
