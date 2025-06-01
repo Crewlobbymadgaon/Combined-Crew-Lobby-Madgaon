@@ -65,6 +65,21 @@
     toggle.textContent = toggle.classList.contains("active") ? "✕" : "☰";
   });
 </script>
+<script>
+  const circulars = [
+    "Shed Order",
+    "Safety Circular",
+    "Counselling Topics",
+    "Loco Operation Instructions"
+  ];
+  let index = 0;
+  const circularText = document.getElementById("circular-text");
+
+  setInterval(() => {
+    index = (index + 1) % circulars.length;
+    circularText.textContent = circulars[index];
+  }, 4000); // 4 seconds rotation
+</script>
 
 </body>
 </html>
