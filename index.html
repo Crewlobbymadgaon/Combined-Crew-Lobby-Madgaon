@@ -21,8 +21,9 @@
     </div>
   </header>
 
-  <!-- Scroll Banner with Toggle & Menu -->
+  <!-- Scroll Banner -->
   <div class="scroll-banner">
+    <!-- Mobile toggle only visible on small screens -->
     <div class="menu-toggle" id="menu-toggle">☰</div>
     <div class="scroll-track">
       <div class="scroll-text">
@@ -31,15 +32,16 @@
         OUR MISSION ZERO SPAD | हमारा लक्ष्य शून्य SPAD | Stay Alert Stay Safe |
       </div>
     </div>
-    <!-- Menu inside scroll-banner so it appears below toggle -->
-    <ul class="menu" id="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Documents</a></li>
-      <li><a href="#">Circulars</a></li>
-      <li><a href="#">Acknowledgment</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
   </div>
+
+  <!-- Menu -->
+  <ul class="menu" id="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Documents</a></li>
+    <li><a href="#">Circulars</a></li>
+    <li><a href="#">Acknowledgment</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 
   <!-- Footer -->
   <footer>
@@ -47,17 +49,15 @@
   </footer>
 
   <script>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
 
-  toggle.addEventListener("click", function () {
-    menu.classList.toggle("active");
-    toggle.classList.toggle("active");
-
-    // Optional: Change icon from ☰ to ✖
-    toggle.textContent = toggle.classList.contains("active") ? "✖" : "☰";
-  });
-</script>
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("active");
+      toggle.classList.toggle("active");
+      toggle.textContent = toggle.classList.contains("active") ? "✖" : "☰";
+    });
+  </script>
 
 </body>
 </html>
