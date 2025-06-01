@@ -210,23 +210,27 @@ footer {
 }
 
 .circular-box {
-  position: absolute;
+.circular-box {
+  display: none; /* Hide all circulars by default */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   width: 100%;
-  padding: 20px 40px;
-  background-color: #f0f8ff;
+  background: #f0f8ff;
   border: 2px solid #0078d4;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 16px 32px;
+  box-sizing: border-box;
+  position: absolute;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  display: none;
-  box-sizing: border-box;
 }
 
 .circular-box.active {
-  display: block;
+  display: flex;       /* Only active circular is visible */
+  position: relative;  /* Bring it in flow */
   opacity: 1;
-  position: relative;
 }
 
 .box-header {
