@@ -1,4 +1,6 @@
-/* Reset and base styles */
+/* ---------------------------------- */
+/* 1. Base Styles - Shared All Devices */
+/* ---------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +16,6 @@ body {
   flex-direction: column;
 }
 
-/* Header */
 header {
   background: linear-gradient(to right, #ffffff, #d6eaff);
   padding: 2rem 1rem 1rem;
@@ -39,7 +40,6 @@ header {
 
 .logo-bg img {
   height: 60px;
-  max-width: 100%;
 }
 
 .title h1 {
@@ -49,7 +49,6 @@ header {
   color: #003366;
 }
 
-/* Scroll Banner */
 .scroll-banner {
   position: relative;
   display: flex;
@@ -88,31 +87,6 @@ header {
   100% { transform: translateX(-100%); }
 }
 
-/* Menu Toggle (Mobile Only) */
-.menu-toggle {
-  display: none;
-  background: white;
-  border: 2px solid #003366;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  text-align: center;
-  color: #003366;
-  cursor: pointer;
-  z-index: 1001;
-  line-height: 40px; /* exactly same as height */
-  transition: all 0.3s ease;
-}
-
-.menu-toggle.active {
-  background-color: #003366;
-  color: white;
-  border-color: #003366;
-  align-items: center;
-}
-
-/* Menu */
 .menu {
   list-style: none;
   display: flex;
@@ -133,48 +107,72 @@ header {
 .menu li a:hover {
   background: #d6eaff;
 }
-/* Hide toggle on desktop, show only on mobile */
-.menu-toggle {
-  display: none; /* Default hidden */
+
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
 }
 
-/* Mobile-specific styles */
+/* ---------------------------------- */
+/* 2. Desktop Styles (default)        */
+/* ---------------------------------- */
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+}
+
+/* ---------------------------------- */
+/* 3. Mobile Styles (< 768px)         */
+/* ---------------------------------- */
 @media (max-width: 768px) {
   .menu-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border: 2px solid #003366;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  color: #003366;
-  cursor: pointer;
-  z-index: 1001;
-  transition: all 0.3s ease;
-}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px solid #003366;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #003366;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+  }
 
-.menu-toggle.active {
-  background-color: #003366;
-  color: white;
-}
+  .menu-toggle span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .menu-toggle.active {
+    background-color: #003366;
+    color: white;
+  }
 
   .menu {
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
-  margin-top: 5px;
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent */
-  backdrop-filter: blur(10px); /* frosted glass effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+    backdrop-filter: blur(10px); /* frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 
   .menu.active {
     display: flex;
@@ -188,23 +186,11 @@ header {
     display: block;
     padding: 10px;
     color: #003366;
-    text-decoration: none;
-    font-weight: bold;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.85); /* Optional, slight white for contrast */
   }
 
   .menu li a:hover {
     background: #d6eaff;
   }
-  }
-/* Footer */
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-}
-
 }
