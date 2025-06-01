@@ -86,6 +86,12 @@ header {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+/* Slower scroll for desktop */
+@media (min-width: 768px) {
+  .scroll-text {
+    animation-duration: 25s; /* adjust if needed */
+  }
+}
 
 .menu {
   list-style: none;
