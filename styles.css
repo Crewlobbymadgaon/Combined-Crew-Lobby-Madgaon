@@ -141,26 +141,25 @@ header {
 /* Mobile-specific styles */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: inline-block;
-    background: white;
-    border: 2px solid #003366;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-    line-height: 36px; /* vertically center symbol */
-    text-align: center;
-    color: #003366;
-    cursor: pointer;
-    z-index: 1001;
-    transition: all 0.3s ease;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid #003366;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: #003366;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
 
-  .menu-toggle.active {
-    background-color: #003366;
-    color: white;
-    align-items: center;
-  }
+.menu-toggle.active {
+  background-color: #003366;
+  color: white;
+}
 
   .menu {
   display: none;
