@@ -205,42 +205,49 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 2rem auto;
   padding: 1rem;
-  max-width: 90%;
-}
-
-/* Blinking Heading */
-.blink {
-  animation: blink-animation 1s steps(2, start) infinite;
-  color: red;
-  font-size: 1.8rem;
+  width: 100%;
+  max-width: 700px;
   text-align: center;
-  margin-bottom: 1rem;
-}
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
 }
 
-/* Circular Box Styling */
+/* Blinking "Latest" Heading */
+.blink {
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Circular Box */
 .circular-box {
   background: #e0f7fa;
   padding: 1.5rem 2rem;
   border-radius: 12px;
-  text-align: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
   animation: fadeIn 1s ease-in-out;
 }
 
-.circular-box p {
-  font-size: 1.3rem;
-  font-weight: bold;
+.circular-box h3 {
+  font-size: 1.5rem;
   color: #003366;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.circular-box p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.2rem;
 }
 
 /* Acknowledge Button */
@@ -252,7 +259,7 @@ footer {
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 .ack-btn:hover {
   background-color: #004c99;
@@ -260,13 +267,16 @@ footer {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .circular-box p {
-    font-size: 1.1rem;
+  .circular-box h3 {
+    font-size: 1.3rem;
   }
+
+  .circular-box p {
+    font-size: 1rem;
+  }
+
   .ack-btn {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
-
-
-
+}
