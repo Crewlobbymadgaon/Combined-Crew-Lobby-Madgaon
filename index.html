@@ -45,10 +45,12 @@
 <section class="latest-circulars">
   <h2 class="blink">Latest</h2>
   <div class="circular-box">
-    <p id="circular-text">Shed Order</p>
+    <h3 id="circular-title">Safety Circular</h3>
+    <p id="circular-desc">Always follow proper safety procedures during shunting operations.</p>
     <button class="ack-btn">Acknowledge</button>
   </div>
 </section>
+
 
   <!-- Footer -->
   <footer>
@@ -67,19 +69,35 @@
 </script>
 <script>
   const circulars = [
-    "Shed Order",
-    "Safety Circular",
-    "Counselling Topics",
-    "Loco Operation Instructions"
+    {
+      title: "Safety Circular",
+      desc: "Always follow proper safety procedures during shunting operations."
+    },
+    {
+      title: "Counselling Topics",
+      desc: "Regular counselling sessions to reduce SPAD incidents and improve alertness."
+    },
+    {
+      title: "Loco Operation Instructions",
+      desc: "Ensure brake tests are completed and recorded before every trip."
+    },
+    {
+      title: "Shed Order",
+      desc: "New loco maintenance timings are updated on the notice board."
+    }
   ];
+
   let index = 0;
-  const circularText = document.getElementById("circular-text");
+  const titleEl = document.getElementById("circular-title");
+  const descEl = document.getElementById("circular-desc");
 
   setInterval(() => {
     index = (index + 1) % circulars.length;
-    circularText.textContent = circulars[index];
-  }, 4000); // 4 seconds rotation
+    titleEl.textContent = circulars[index].title;
+    descEl.textContent = circulars[index].desc;
+  }, 5000); // rotates every 5 seconds
 </script>
+
 
 </body>
 </html>
