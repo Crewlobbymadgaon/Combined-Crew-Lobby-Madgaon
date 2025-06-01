@@ -145,17 +145,16 @@ footer {
   }
 
   .menu {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #002244;
+    padding: 10px 0;
+  }
 
-.menu.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+  .menu.active {
+    display: flex;
+  }
 
   .menu li {
     width: 100%;
