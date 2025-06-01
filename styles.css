@@ -94,7 +94,7 @@ header {
 /* Slower scroll for desktop */
 @media (min-width: 768px) {
   .scroll-text {
-    animation-duration: 30s; /* adjust if needed */
+    animation-duration: 40s; /* adjust if needed */
   }
 }
 
