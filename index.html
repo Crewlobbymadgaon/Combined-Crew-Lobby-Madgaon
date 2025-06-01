@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script>
+  const circulars = document.querySelectorAll(".circular-box");
+  let currentIndex = 0;
+
+  function rotateCirculars() {
+    circulars[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % circulars.length;
+    circulars[currentIndex].classList.add("active");
+  }
+
+  setInterval(rotateCirculars, 5000);
+  </script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -94,19 +106,7 @@
     toggle.textContent = toggle.classList.contains("active") ? "✕" : "☰";
   });
 </script>
-  <script>
-  const circulars = document.querySelectorAll(".circular-box");
-  let currentIndex = 0;
-
-  function rotateCirculars() {
-    circulars[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % circulars.length;
-    circulars[currentIndex].classList.add("active");
-  }
-
-  setInterval(rotateCirculars, 5000);
-  </script>
-
+  
 
 </body>
 </html>
