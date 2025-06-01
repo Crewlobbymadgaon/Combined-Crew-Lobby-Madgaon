@@ -47,17 +47,17 @@
   </footer>
 
   <script>
-    document.getElementById("menu-toggle").addEventListener("click", function () {
-      document.getElementById("menu").classList.toggle("active");
-      const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
 
-toggle.addEventListener("click", function () {
-  menu.classList.toggle("active");
-  toggle.classList.toggle("active"); // Add this line
-});
-    });
-  </script>
+  toggle.addEventListener("click", function () {
+    menu.classList.toggle("active");
+    toggle.classList.toggle("active");
+
+    // Optional: Change icon from ☰ to ✖
+    toggle.textContent = toggle.classList.contains("active") ? "✖" : "☰";
+  });
+</script>
 
 </body>
 </html>
