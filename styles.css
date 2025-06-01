@@ -69,7 +69,7 @@ header {
 
 .scroll-text {
   display: inline-block;
-  
+  animation: scroll-left 15s linear infinite;
   font-size: 16px;
   font-weight: bold;
   color: #003366;
@@ -204,7 +204,5 @@ footer {
   .menu li a:hover {
     background: #d6eaff;
   }
-  .scroll-text {
-  animation: scroll-left 15s linear infinite;
-}
+  
 }
