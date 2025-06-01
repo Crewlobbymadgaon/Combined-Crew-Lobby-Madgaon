@@ -72,36 +72,7 @@
     toggle.textContent = toggle.classList.contains("active") ? "✕" : "☰";
   });
 </script>
-<script>
-  const circulars = [
-    {
-      title: "Safety Circular",
-      desc: "Always follow proper safety procedures during shunting operations."
-    },
-    {
-      title: "Counselling Topics",
-      desc: "Regular counselling sessions to reduce SPAD incidents and improve alertness."
-    },
-    {
-      title: "Loco Operation Instructions",
-      desc: "Ensure brake tests are completed and recorded before every trip."
-    },
-    {
-      title: "Shed Order",
-      desc: "New loco maintenance timings are updated on the notice board."
-    }
-  ];
 
-  let index = 0;
-  const titleEl = document.getElementById("circular-title");
-  const descEl = document.getElementById("circular-desc");
-
-  setInterval(() => {
-    index = (index + 1) % circulars.length;
-    titleEl.textContent = circulars[index].title;
-    descEl.textContent = circulars[index].desc;
-  }, 5000); // rotates every 5 seconds
-</script>
 
 
 </body>
