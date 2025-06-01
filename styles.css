@@ -54,7 +54,7 @@ header {
   position: relative;
   display: flex;
   align-items: center;
-  background: #e6f2ff;
+  background: transparent;
   padding: 5px 10px;
   overflow: hidden;
   gap: 10px;
