@@ -76,7 +76,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  will-change: transform;
+  
 }
 
 .icon {
@@ -84,12 +84,8 @@ header {
 }
 
 @keyframes scroll-left {
-  0% {
-    transform: translate3d(100%, 0, 0);
-  }
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 /* Slower scroll for desktop */
 @media (min-width: 768px) {
