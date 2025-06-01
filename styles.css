@@ -76,7 +76,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  
+  white-space: nowrap;
 }
 
 .icon {
@@ -201,4 +201,4 @@ footer {
     background: #d6eaff;
   }
   
-}
+
