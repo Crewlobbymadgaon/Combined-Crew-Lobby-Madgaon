@@ -133,20 +133,32 @@ header {
 .menu li a:hover {
   background: #d6eaff;
 }
-
-/* Footer */
-footer {
-  background-color: #001f3f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
+/* Hide toggle on desktop, show only on mobile */
+.menu-toggle {
+  display: none; /* Default hidden */
 }
 
-/* Responsive for Mobile */
+/* Mobile-specific styles */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: flex;
+    display: inline-block;
+    background: white;
+    border: 2px solid #003366;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    line-height: 36px; /* vertically center symbol */
+    text-align: center;
+    color: #003366;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active {
+    background-color: #003366;
+    color: white;
   }
 
   .menu {
@@ -155,8 +167,8 @@ footer {
     align-items: flex-end;
     width: 100%;
     margin-top: 5px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid #ccc;
+    background: transparent; /* Make menu background transparent */
+    border: none;
     padding: 10px;
   }
 
@@ -175,9 +187,20 @@ footer {
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
+    background: rgba(255, 255, 255, 0.85); /* Optional, slight white for contrast */
   }
 
   .menu li a:hover {
     background: #d6eaff;
   }
+  }
+/* Footer */
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
 }
