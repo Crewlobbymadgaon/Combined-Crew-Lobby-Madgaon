@@ -88,18 +88,21 @@ header {
   100% { transform: translateX(-100%); }
 }
 
-/* Toggle Button */
+/* Menu Toggle (Mobile Only) */
 .menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
   background: white;
-  color: #003366;
   border: 2px solid #003366;
   border-radius: 50%;
   width: 36px;
   height: 36px;
   font-size: 20px;
-  line-height: 32px;
   text-align: center;
+  color: #003366;
   cursor: pointer;
+  z-index: 1001;
   transition: all 0.3s ease;
 }
 
@@ -116,6 +119,19 @@ header {
   gap: 20px;
   justify-content: center;
   padding: 1rem 0;
+  background: transparent;
+}
+
+.menu li a {
+  color: #003366;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.menu li a:hover {
+  background: #d6eaff;
 }
 
 /* Footer */
@@ -127,29 +143,21 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive Mobile */
+/* Responsive for Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: inline-block;
-    background: white;
-    border: 2px solid #003366;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-    line-height: 32px;
-    text-align: center;
-    color: #003366;
-    cursor: pointer;
-    z-index: 1001;
+    display: flex;
   }
 
   .menu {
     display: none;
     flex-direction: column;
+    align-items: flex-end;
     width: 100%;
-    background-color: #002244;
-    padding: 10px 0;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    padding: 10px;
   }
 
   .menu.active {
